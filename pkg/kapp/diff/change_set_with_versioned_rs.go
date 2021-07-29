@@ -288,7 +288,7 @@ func existingVersionedResources(rs []ctlres.Resource) versionedResources {
 		// onto transient resources for non-versioning related purposes).
 		_, hasVersionedAnn := res.Annotations()[versionedResAnnKey]
 
-		versionedRs := VersionedResource{res: res, allRules: nil}
+		versionedRs := VersionedResource{res: res}
 		_, version := versionedRs.BaseNameAndVersion()
 
 		if hasVersionedAnn && !res.Transient() && version != "" {
